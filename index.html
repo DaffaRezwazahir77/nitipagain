@@ -277,7 +277,10 @@ document.getElementById('form').addEventListener('submit',e=>{
   ? 'Rp 5.000 – 10.000'
   : 'Rp 15.000 – 20.000';
 
- const msg = `Halo Admin nitipagain,
+ const msg = `Halo Admin 👋
+
+Terima kasih banyak sudah berkenan memesan di tempat kami 🙏✨  
+Berikut detail pesanan pelanggan:
 
 Nama: ${name}
 Kota: ${kota}
@@ -288,8 +291,14 @@ ${barang}
 Fee: ${feeText}
 Ongkir: ${ongkirText}
 
-Alamat:
-${alamat}`;
+Alamat Pengiriman:
+${alamat}
+
+Kami sangat mengapresiasi kepercayaannya 💙  
+Agar proses pesanan bisa kami siapkan lebih cepat dan tepat waktu, mohon kesediaannya untuk melakukan transfer maksimal H-1 sebelum pengiriman 🙏
+
+Terima kasih, semoga harinya menyenangkan 😊`;
+
 
  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`);
 });
