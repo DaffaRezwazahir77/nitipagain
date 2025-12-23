@@ -9,21 +9,29 @@
 
 <style>
 :root{
- --bg:#f5f5f5;
+ --bg:#f8fafc;
  --panel:#ffffff;
  --border:#e5e7eb;
- --blue:#38bdf8;
+ --blue:#0ea5e9;
+ --blue-deep:#0284c7;
+ --blue-soft:#e0f2fe;
  --text:#0f172a;
  --muted:#64748b;
 }
+
 *{box-sizing:border-box}
+
 body{
  margin:0;
  font-family:Inter,sans-serif;
- background:var(--bg);
+ background:
+  radial-gradient(1200px 400px at top,#e0f2fe 0%,transparent 60%),
+  linear-gradient(180deg,#f8fafc 0%,#f1f5f9 100%);
  color:var(--text);
  min-height:100vh;
 }
+
+/* HERO */
 .hero{
  min-height:100vh;
  display:flex;
@@ -33,62 +41,86 @@ body{
  text-align:center;
  padding:28px 20px;
 }
+
 .logo-wrap{
  width:170px;
  height:170px;
  border-radius:50%;
- background:#f1f5f9;
+ background:#f8fafc;
  overflow:hidden;
- box-shadow:0 0 40px rgba(56,189,248,.45);
  display:flex;
  align-items:center;
  justify-content:center;
+ box-shadow:
+  inset 0 0 0 8px rgba(255,255,255,.9),
+  0 25px 70px rgba(14,165,233,.35);
 }
 .logo-wrap img{
  width:100%;
  height:100%;
  object-fit:contain;
  padding:18px;
- background:#f1f5f9;
  border-radius:50%;
- display:block;
 }
+
 .brand{
  font-family:'Playfair Display',serif;
  font-size:34px;
- margin-top:14px;
+ margin-top:16px;
 }
 .tag{
  font-size:12px;
  letter-spacing:3px;
  color:var(--muted);
- margin-top:4px;
+ margin-top:6px;
 }
+
+/* STATUS */
 .status{
- margin-top:14px;
+ margin-top:16px;
  font-size:12px;
  font-weight:600;
- padding:7px 16px;
+ padding:8px 18px;
  border-radius:999px;
+ box-shadow:inset 0 -2px 0 rgba(0,0,0,.05);
 }
+
+/* BUTTON */
 .btn{
- margin-top:22px;
- padding:16px 42px;
+ margin-top:26px;
+ padding:16px 48px;
  border-radius:999px;
  border:1px solid var(--blue);
- background:#fff;
+ background:
+  linear-gradient(180deg,#ffffff,#f0f9ff);
  font-weight:600;
  font-size:14px;
  cursor:pointer;
+ box-shadow:
+  0 18px 40px rgba(14,165,233,.35),
+  inset 0 -2px 0 rgba(14,165,233,.25);
+ transition:.25s;
+}
+.btn:hover{
+ transform:translateY(-2px);
+ box-shadow:
+  0 26px 60px rgba(14,165,233,.45),
+  inset 0 -2px 0 rgba(14,165,233,.35);
+}
+.btn:active{
+ transform:translateY(0);
 }
 .btn:disabled{
  opacity:.5;
  cursor:not-allowed;
+ box-shadow:none;
 }
+
+/* MODAL */
 .modal{
  position:fixed;
  inset:0;
- background:rgba(245,245,245,.95);
+ background:rgba(248,250,252,.94);
  display:none;
  justify-content:center;
  align-items:center;
@@ -96,16 +128,21 @@ body{
  z-index:999;
 }
 .modal.active{display:flex}
+
 .box{
  background:#fff;
  width:100%;
  max-width:420px;
- border-radius:18px;
+ border-radius:22px;
  padding:22px;
  border:1px solid var(--border);
  max-height:90vh;
  overflow-y:auto;
+ box-shadow:
+  0 40px 100px rgba(15,23,42,.18);
 }
+
+/* FORM */
 label{
  display:block;
  font-size:12px;
@@ -114,36 +151,43 @@ label{
 }
 input,textarea,select{
  width:100%;
- padding:12px;
- border-radius:12px;
+ padding:12px 14px;
+ border-radius:14px;
  border:1px solid var(--border);
  font-size:14px;
+ background:#fff;
+ box-shadow:inset 0 1px 2px rgba(0,0,0,.04);
 }
 textarea{resize:none}
+
 .info-box{
  margin-top:10px;
  padding:12px;
- border-radius:12px;
+ border-radius:14px;
  font-size:13px;
  font-weight:600;
+ box-shadow:inset 0 -1px 0 rgba(0,0,0,.05);
 }
 .fee{
- background:#f0f9ff;
+ background:var(--blue-soft);
  border:1px dashed var(--blue);
 }
 .ongkir{
- background:#f9fafb;
+ background:#f8fafc;
  border:1px dashed #cbd5e1;
 }
+
 .note{
  margin-top:14px;
  font-size:12px;
  line-height:1.7;
- background:#f9fafb;
+ background:#f8fafc;
  padding:14px;
- border-radius:14px;
+ border-radius:16px;
  border:1px solid var(--border);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
 }
+
 .form-action{
  margin-top:20px;
 }
@@ -152,11 +196,12 @@ textarea{resize:none}
 }
 </style>
 </head>
+<!-- BODY & SCRIPT TETAP SAMA PERSIS DENGAN MILIK KAMU -->
+
 
 <body>
 
 <section class="hero">
-
  <div class="logo-wrap">
   <img src="assets/logo-jastip.jpg" alt="Logo nitipagain">
  </div>
@@ -167,7 +212,6 @@ textarea{resize:none}
  <div class="status" id="status"></div>
 
  <button class="btn" id="orderBtn" onclick="openModal()">PESAN SEKARANG</button>
-
 </section>
 
 <div class="modal" id="modal">
