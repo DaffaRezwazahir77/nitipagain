@@ -5,25 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nitipagain — Premium Jastip Makanan</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
- --bg:#f5f5f5;
- --panel:#ffffff;
- --border:#e5e7eb;
- --blue:#38bdf8;
+ --blue:#0ea5e9;
+ --blue-soft:#e0f2fe;
  --text:#0f172a;
  --muted:#64748b;
+ --border:#e5e7eb;
 }
+
 *{box-sizing:border-box}
 body{
  margin:0;
- font-family:Inter,sans-serif;
- background:var(--bg);
+ font-family:'DM Sans',sans-serif;
  color:var(--text);
  min-height:100vh;
+ background:
+  radial-gradient(700px 350px at 50% 0%,#dbeafe,transparent 65%),
+  linear-gradient(180deg,#f8fbff,#eaf4ff);
 }
+
+/* HERO */
 .hero{
  min-height:100vh;
  display:flex;
@@ -33,62 +37,77 @@ body{
  text-align:center;
  padding:28px 20px;
 }
+
+/* LOGO */
 .logo-wrap{
- width:170px;
- height:170px;
+ width:200px;
+ height:200px;
  border-radius:50%;
- background:#f1f5f9;
- overflow:hidden;
- box-shadow:0 0 40px rgba(56,189,248,.45);
- display:flex;
- align-items:center;
- justify-content:center;
+ padding:6px;
+ background:linear-gradient(145deg,#7dd3fc,#0ea5e9);
+ box-shadow:0 40px 120px rgba(14,165,233,.6);
 }
 .logo-wrap img{
  width:100%;
  height:100%;
- object-fit:contain;
- padding:18px;
- background:#f1f5f9;
  border-radius:50%;
- display:block;
+ object-fit:cover;
 }
+
+/* BRAND */
 .brand{
+ margin-top:26px;
  font-family:'Playfair Display',serif;
- font-size:34px;
- margin-top:14px;
+ font-style:italic;
+ font-size:46px;
+ background:linear-gradient(135deg,#0369a1,#38bdf8);
+ -webkit-background-clip:text;
+ -webkit-text-fill-color:transparent;
+ text-shadow:0 16px 40px rgba(14,165,233,.4);
 }
+
 .tag{
- font-size:12px;
- letter-spacing:3px;
- color:var(--muted);
- margin-top:4px;
+ margin-top:10px;
+ font-size:11px;
+ letter-spacing:4px;
+ padding:7px 20px;
+ border-radius:999px;
+ color:#0369a1;
+ background:linear-gradient(180deg,#f0f9ff,#e0f2fe);
+ border:1px solid rgba(14,165,233,.25);
 }
+
+/* STATUS */
 .status{
- margin-top:14px;
+ margin-top:18px;
  font-size:12px;
  font-weight:600;
- padding:7px 16px;
+ padding:8px 18px;
  border-radius:999px;
+ background:rgba(224,242,254,.7);
+ color:#0369a1;
+ box-shadow:0 8px 25px rgba(14,165,233,.35);
 }
+
+/* BUTTON */
 .btn{
- margin-top:22px;
- padding:16px 42px;
+ margin-top:30px;
+ padding:16px 52px;
  border-radius:999px;
- border:1px solid var(--blue);
- background:#fff;
+ border:none;
+ background:linear-gradient(135deg,#7dd3fc,#0ea5e9);
+ color:#fff;
  font-weight:600;
- font-size:14px;
  cursor:pointer;
+ box-shadow:0 18px 50px rgba(14,165,233,.45);
 }
-.btn:disabled{
- opacity:.5;
- cursor:not-allowed;
-}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* MODAL */
 .modal{
  position:fixed;
  inset:0;
- background:rgba(245,245,245,.95);
+ background:rgba(248,250,252,.96);
  display:none;
  justify-content:center;
  align-items:center;
@@ -96,16 +115,20 @@ body{
  z-index:999;
 }
 .modal.active{display:flex}
+
 .box{
  background:#fff;
  width:100%;
  max-width:420px;
- border-radius:18px;
- padding:22px;
+ border-radius:24px;
+ padding:24px;
  border:1px solid var(--border);
  max-height:90vh;
  overflow-y:auto;
+ box-shadow:0 40px 120px rgba(15,23,42,.25);
 }
+
+/* FORM */
 label{
  display:block;
  font-size:12px;
@@ -114,67 +137,56 @@ label{
 }
 input,textarea,select{
  width:100%;
- padding:12px;
- border-radius:12px;
+ padding:12px 14px;
+ border-radius:14px;
  border:1px solid var(--border);
  font-size:14px;
+ font-family:'DM Sans',sans-serif;
 }
 textarea{resize:none}
+
 .info-box{
- margin-top:10px;
+ margin-top:12px;
  padding:12px;
- border-radius:12px;
+ border-radius:14px;
  font-size:13px;
  font-weight:600;
 }
-.fee{
- background:#f0f9ff;
- border:1px dashed var(--blue);
-}
-.ongkir{
- background:#f9fafb;
- border:1px dashed #cbd5e1;
-}
+.fee{background:var(--blue-soft);border:1px dashed var(--blue)}
+.ongkir{background:#f8fafc;border:1px dashed #cbd5e1}
+
 .note{
  margin-top:14px;
  font-size:12px;
  line-height:1.7;
- background:#f9fafb;
+ background:#f8fafc;
  padding:14px;
- border-radius:14px;
+ border-radius:16px;
  border:1px solid var(--border);
 }
-.form-action{
- margin-top:20px;
-}
-.form-action .btn{
- width:100%;
-}
+
+.form-action{margin-top:20px}
+.form-action .btn{width:100%}
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-
  <div class="logo-wrap">
-  <!-- PATH LOGO SUDAH BENAR -->
   <img src="assets/logo-jastip.jpg" alt="Logo nitipagain">
  </div>
 
- <div class="brand">nitipagain</div>
+ <div class="brand">Nitip.again</div>
  <div class="tag">PREMIUM JASTIP MAKANAN</div>
 
  <div class="status" id="status"></div>
-
  <button class="btn" id="orderBtn" onclick="openModal()">PESAN SEKARANG</button>
-
 </section>
 
 <div class="modal" id="modal">
  <div class="box">
   <form id="form">
-
    <label>Nama Pemesan</label>
    <input id="name" placeholder="Wajib diisi">
 
@@ -186,14 +198,15 @@ textarea{resize:none}
    </select>
 
    <label>Detail Pesanan</label>
-   <textarea id="barang" rows="3" placeholder="Nama barang - rasa - jumlah"></textarea>
+   <textarea id="barang" rows="3" placeholder="Contoh:
+nama barang,rasa,banyaknya"></textarea>
 
    <div class="info-box fee" id="feeBox">Fee Jastip: Rp 0</div>
 
    <div class="info-box ongkir">
-    Ongkir:
-    <br>- Kuningan: Rp 5.000 – 10.000
-    <br>- Luar Kuningan: Rp 15.000 – 20.000
+    Ongkir:<br>
+    - Kuningan: Rp 5.000 – 10.000<br>
+    - Luar Kuningan: Rp 15.000 – 20.000
    </div>
 
    <div class="note">
@@ -201,8 +214,11 @@ textarea{resize:none}
     2. Dana yang sudah ditransfer <b>tidak dapat dikembalikan</b>.<br>
     3. Pesanan diproses setelah <b>bukti transfer</b> diterima.<br>
     4. Jika varian kosong akan <b>diganti serupa</b>.<br>
-    5. Pembayaran via <b>DANA 085720303275</b><br>
-       a/n <b>ANJAR DAFFA REZWAZAHIR</b>.
+    5. Metode Pembayaran:<br>
+    • <b>DANA</b> : 0857-2030-3275<br>
+    &nbsp;&nbsp;a/n <b>ANJAR DAFFA REZWAZAHIR</b><br>
+    • <b>BCA</b> : 2992242753<br>
+    &nbsp;&nbsp;a/n <b>DEWI BERLIANI</b>
    </div>
 
    <label>Alamat Lengkap</label>
@@ -211,7 +227,6 @@ textarea{resize:none}
    <div class="form-action">
     <button class="btn">Kirim Pesanan</button>
    </div>
-
   </form>
  </div>
 </div>
@@ -222,31 +237,30 @@ const modal=document.getElementById('modal');
 const statusBox=document.getElementById('status');
 const orderBtn=document.getElementById('orderBtn');
 
-function openModal(){
- modal.classList.add('active');
-}
+const nameInput=document.getElementById('name');
+const kotaInput=document.getElementById('kota');
+const barangInput=document.getElementById('barang');
+const alamatInput=document.getElementById('alamat');
+const feeBox=document.getElementById('feeBox');
+
+let feeText='Rp 0';
+
+function openModal(){modal.classList.add('active')}
 
 function updateStatus(){
  const h=new Date().getHours();
  if(h>=8 && h<24){
   statusBox.textContent='● OPEN · Order s/d 00.00 WIB';
-  statusBox.style.background='#dcfce7';
-  statusBox.style.color='#16a34a';
   orderBtn.disabled=false;
  }else{
   statusBox.textContent='● CLOSED · Order diproses mulai 08.00 WIB';
-  statusBox.style.background='#fee2e2';
-  statusBox.style.color='#dc2626';
   orderBtn.disabled=true;
  }
 }
 updateStatus();
 setInterval(updateStatus,60000);
 
-const barangInput=document.getElementById('barang');
-const feeBox=document.getElementById('feeBox');
-let feeText='Rp 0';
-
+/* HITUNG FEE */
 barangInput.addEventListener('input',()=>{
  let total=0;
  barangInput.value.split('\n').forEach(l=>{
@@ -260,15 +274,16 @@ barangInput.addEventListener('input',()=>{
  feeBox.textContent='Fee Jastip: '+feeText;
 });
 
+/* SUBMIT */
 document.getElementById('form').addEventListener('submit',e=>{
  e.preventDefault();
 
- const name=document.getElementById('name').value.trim();
- const kota=document.getElementById('kota').value;
+ const name=nameInput.value.trim();
+ const kota=kotaInput.value;
  const barang=barangInput.value.trim();
- const alamat=document.getElementById('alamat').value.trim();
+ const alamat=alamatInput.value.trim();
 
- if(!name || !kota || !barang || !alamat){
+ if(!name||!kota||!barang||!alamat){
   alert('Mohon lengkapi seluruh data pesanan.');
   return;
  }
@@ -277,7 +292,11 @@ document.getElementById('form').addEventListener('submit',e=>{
   ? 'Rp 5.000 – 10.000'
   : 'Rp 15.000 – 20.000';
 
- const msg = `Halo Admin nitipagain,
+ const msg=`Halo Admin nitipagain 👋
+
+Terima kasih banyak sudah berkenan memesan di tempat kami 🙏✨
+
+Berikut detail pesanan pelanggan:
 
 Nama: ${name}
 Kota: ${kota}
@@ -285,11 +304,18 @@ Kota: ${kota}
 Pesanan:
 ${barang}
 
-Fee: ${feeText}
+Fee Jastip: ${feeText}
 Ongkir: ${ongkirText}
 
-Alamat:
-${alamat}`;
+Alamat Pengiriman:
+${alamat}
+
+Kami sangat mengapresiasi kepercayaannya 💙
+
+Agar proses pesanan bisa kami siapkan lebih cepat dan tepat waktu,
+mohon kesediaannya untuk melakukan transfer maksimal H-1 sebelum pengiriman dan mengirim buktinya 🙏
+
+Terima kasih, semoga harinya menyenangkan 😊`;
 
  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`);
 });
